@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // window.onload = function() {
+        //     function test() {
+        //         console.log("test");
+        //     }
+
+        //     var test1 = new test();
+        //     console.log(test.prototype);
+        //     console.log(test1);
+        // }
+
+        // function hig(a, b, callback) {
+        //     console.log(a + b);
+        //     callback && callback();
+        // };
+        // hig(1 , 8 , function(){
+        //     alert("succeed");
+        // });
+
+        // function close() {
+        //     var num = 10;
+        //    return function() {
+        //        alert(num);
+        //    }
+        // }
+        // var fn = new close;
+        // fn();
+
+        // window.onload = function() {
+        //     var lis = document.querySelectorAll('li');
+        //     for (var i = 0; i < lis.length; i++){
+        //         (function(i) {
+        //             lis[i].onclick = function () {
+        //                 alert(i);
+        //             }
+        //         })(i)
+        //     }
+        // }
+        window.onload = function () {
+
+            // var car = (function () {
+            //     var strat = 13;
+            //     var total = 0;
+            //     return {
+            //         price: function (n) {
+            //             if (n <= 3) {
+            //                 total = 13;
+            //             } else {
+            //                 total = 13 + (n - 2) * 5;
+            //             }
+            //             return total;
+            //         },
+            //         yd: function (y) {
+            //             return y ? total + 10 : total;
+            //         }
+            //     }
+            // })();
+            // alert(car.price(10) + "&&" + car.price(1));
+            // alert(car.yd(true));
+
+
+        }
+
+
+        //         function sum(n) {
+        //             if(n == 1){  //两个等号！！！ 
+        //                 return n;
+        //             }else{  
+        //                 return  sum( n - 1 ) + n;
+        //             }
+
+        // };
+        // alert(sum(100));
+
+        // function sl(n) {
+        //     for (var i = 0; i < n; i++) {
+        //         var num;
+        //         if (n < 1) {
+        //             num = 0;
+        //         } else {
+        //             num = i * (i - 1);
+        //         }
+        //         return num;
+        //     }
+        // }
+        // alert(sl(10));
+
+        var data = [{
+                id: 1,
+                name: "id1",
+                glod: [{
+                        id: 11,
+                        name: "id11"
+                    },
+                    {
+                        id: 12,
+                        name: "id11"
+                    }
+                ]
+
+            },
+            {
+                id: 2,
+                name: "id2"
+            }
+        ];
+
+        function getid(json , id){
+            var mydata = {};
+            json.forEach(function(item){
+                if(item.id === id){
+                    // console.log(item);
+                    mydata = item;
+                }else if(item.glod && item.glod.length > 0){
+                    mydata = getid(item.glod , id);
+
+                }
+            })
+            return mydata;
+        }
+       console.log(getid(data , 12)) ;
+    </script>
+</head>
+
+<body>
+    <ul>
+        <li>li1</li>
+        <li>li2</li>
+        <li>li3</li>
+        <li>li4</li>
+    </ul>
+</body>
+
+</html>

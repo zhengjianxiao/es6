@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let arr = [20, 38, 80, 100];
+        let result = arr.reduce((tem, item, index) => index == arr.length - 1 ? (tem + item) / arr.length : tem + item);
+        //    {
+        //        if(index != arr.length - 1){
+        //            return tem + item;
+        //        }else{
+        //            return (tem + item)/arr.length;
+        //        }
+
+        //     });
+        alert(result);
+
+        let abb = [{
+                name: "bao",
+                price: "10000000"
+            },
+            {
+                name: "xie",
+                price: "12"
+            }
+        ]
+        let res = abb.filter(item => item.price > 100);
+        alert(res);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
